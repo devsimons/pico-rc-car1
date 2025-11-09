@@ -28,6 +28,10 @@ stby.high()
 full_speed = 65535
 half_speed = 32768
 
+# Head Lights
+led1 = Pin(7, Pin.OUT)
+led2 = Pin(8, Pin.OUT)
+
 ###############################
 #                             #
 # M O T O R - C O N T R O L   #
@@ -38,14 +42,20 @@ def drive_motor(direction):
         ain1.high()
         ain2.low()
         pwma.duty_u16(full_speed)
+        led1.on()
+        led2.on()
     elif direction == "reverse":
         ain1.low()
         ain2.high()
         pwma.duty_u16(full_speed)
+        led1.on()
+        led2.on()
     elif direction == "stop":
         pwma.duty_u16(0)
         ain1.low()
         ain2.low()
+        led1.off()
+        led2.off()
 
 def steering_motor(direction):
     if direction == "right":
