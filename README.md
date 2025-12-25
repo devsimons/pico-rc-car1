@@ -2,6 +2,12 @@
 
 WiFi-controlled RC car using Raspberry Pi Pico W with web-based interface.
 
+## Requirements
+
+**Firmware**: MicroPython for Raspberry Pi Pico W
+- Download from [micropython.org](https://micropython.org/download/RPI_PICO_W/)
+- Flash using Thonny IDE or drag-and-drop bootloader method
+
 ## Hardware
 
 **Motor Driver**: TB6612FNG dual motor driver
